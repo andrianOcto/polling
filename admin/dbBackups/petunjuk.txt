@@ -1,0 +1,9 @@
+1. tambahkan di tabel tbcandidates :
+	candidate_date_of_birth	: date
+	candidate_gender	: varchar(10)
+	candidate_vision	: varchar(300)
+	candidate_mission	: varchar(300)
+	candidate_achievements	: varchar(1000)
+	candidate_photo		: varchar(50)
+2. Copas semua file yg ada di zip sini ke dalam folder polling, cuma file2 ini yang gw ganti
+3. Thanks
