@@ -9,6 +9,7 @@ if(empty($_SESSION['member_id'])){
 }
 ?>
 <html><head>
+		<script src="js/user.js"></script>
 <link href="css/user_styles.css" rel="stylesheet" type="text/css" />
 </head><body bgcolor="tan">
 <center><img src = "images/polling.png" alt="site logo" height="100" width="100"></center><br>     
@@ -20,6 +21,18 @@ if(empty($_SESSION['member_id'])){
 </div>
 <div id="container">
 <p class="textbiru2"> Click the link above to do the stuff.</p>
+<SELECT NAME="poll" id="poll">
+    <?php
+        $pollings=mysql_query("SELECT * FROM tbpolling")
+        or die("There are no records to display ... \n" . mysql_error());
+        while ($row=mysql_fetch_array($pollings)){
+            echo "<OPTION VALUE=$row[poll_name]>$row[poll_name].($row[poll_year])";
+        }
+    ?>
+</SELECT>
+<button type="button" onclick="createCookie()" >
+    Choose Poll
+</button>
 </div>
 <div id="footer">
 <div class="bottom_addr">&copy; 2012 Simple PHP Polling System. All Rights Reserved</div>

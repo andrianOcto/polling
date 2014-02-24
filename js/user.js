@@ -1,4 +1,10 @@
 //function to handle login-form validation
+function createCookie(){
+    var x = document.getElementById("poll");
+    document.cookie="poll_id=" + (x.selectedIndex + 1);
+    alert("Polling Dipilih");
+}
+
 function loginValidate(loginForm){
 
 var validationVerified=true;

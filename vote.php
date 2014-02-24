@@ -10,7 +10,7 @@ if(empty($_SESSION['member_id'])){
 ?>
 <?php
 // retrieving positions sql query
-$positions=mysql_query("SELECT * FROM tbPositions")
+$positions=mysql_query("SELECT * FROM tbPositions WHERE f_polling_id = $_COOKIE[poll_id]")
 or die("There are no records to display ... \n" . mysql_error()); 
 ?>
 <?php
