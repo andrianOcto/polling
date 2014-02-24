@@ -6,12 +6,12 @@
 <link href="css/user_styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body bgcolor="tan">
-<center><a href ="https://sourceforge.net/projects/pollingsystem/"><img src = "images/logo" alt="site logo"></a></center><br>     
-<center><b><font color = "brown" size="6">Simple PHP Polling System</font></b></center><br><br>
+<center><img src = "images/polling.png" alt="site logo" height="100" width="100"></center><br>     
+<center><b><p class="judul">Simple PHP Polling System</font></b></center>
 <body>
 <div id="page">
 <div id="header">
-<h1>Invalid Credentials Provided </h1>
+<h1 class="textmerah">Invalid Credentials Provided </h1>
 <p align="center">&nbsp;</p>
 </div>
 <div id="container">
@@ -28,7 +28,7 @@ $db_name="polling"; // Database name
 $tbl_name="tbMembers"; // Table name
 
 // This will connect you to your database
-mysql_connect("$host", "$username", "$password");
+mysql_connect("$host", "$username", "$password")or die("cannot connect");
 mysql_select_db("$db_name")or die("cannot select DB");
 
 // Defining your login details into variables
@@ -56,7 +56,7 @@ header("location:student.php");
 }
 //If the username or password is wrong, you will receive this message below.
 else {
-echo "Wrong Username or Password<br><br>Return to <a href=\"login.html\">login</a>";
+echo "Wrong Username or Password<br><br>Return to <a href=\"login.html\">login page</a>";
 }
 
 ob_end_flush();

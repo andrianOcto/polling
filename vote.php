@@ -91,12 +91,12 @@ $(document).ready(function(){
 </script>
 </head>
 <body bgcolor="tan">
-<center><a href ="https://sourceforge.net/projects/pollingsystem/"><img src = "images/logo" alt="site logo"></a></center><br>     
-<center><b><font color = "brown" size="6">Simple PHP Polling System</font></b></center><br><br>
+<center><img src = "images/polling.png" alt="site logo" height="100" width="100"></center><br>     
+<center><b><p class="judul">Simple PHP Polling System</font></b></center>
 <body>
 <div id="page">
 <div id="header">
-  <h1>CURRENT POLLS</h1>
+  <h1 class="textbiru">CURRENT POLLS</h1>
   <a href="student.php">Home</a> | <a href="checkvote.php">Current Polls</a> | <a href="manage-profile.php">Manage My Profile</a> | <a href="logout.php">Logout</a>
 </div>
 <div class="refresh">
@@ -105,7 +105,7 @@ $(document).ready(function(){
 <table width="420" align="center">
 <form name="fmNames" id="fmNames" method="post" action="vote.php" onsubmit="return positionValidate(this)">
 <tr>
-    <td>Choose Position</td>
+    <td><b>Choose Position<b></td>
     <td><SELECT NAME="position" id="position" onclick="getPosition(this.value)">
     <OPTION VALUE="select">select
     <?php 
@@ -141,7 +141,7 @@ echo "<td><input type='radio' name='vote' value='$row[candidate_name]' onclick='
 echo "</tr>";
 }
 echo"<td><input type = 'submit' name= 'Submit'/> </td>";
-echo $_SESSION['member_id'];
+//echo $_SESSION['member_id'];
 mysql_free_result($result);
 mysql_close($link);
 //}

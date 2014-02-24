@@ -52,12 +52,12 @@ $sql = mysql_query( "UPDATE tbMembers SET first_name='$myFirstName', last_name='
 </script>
 </head>
 <body bgcolor="tan">
-<center><a href ="https://sourceforge.net/projects/pollingsystem/"><img src = "images/logo" alt="site logo"></a></center><br>     
-<center><b><font color = "brown" size="6">Simple PHP Polling System</font></b></center><br><br>
+<center><img src = "images/polling.png" alt="site logo" height="100" width="100"></center><br>     
+<center><b><p class="judul">Simple PHP Polling System</p></b></center>
 <div id="page">
 <div id="header">
-  <h1>MANAGE MY PROFILE</h1>
-  <a href="student.php">Home</a> | <a href="checkvote.php">Current Polls</a> | <a href="manage-profile.php">Manage My Profile</a> | <a href="logout.php">Logout</a>
+  <h1 class="textbiru">MANAGE MY PROFILE</h1>
+  <a href="student.php">Home</a> | <a href="vote.php">Current Polls</a> | <a href="manage-profile.php">Manage My Profile</a> | <a href="logout.php">Logout</a>
 </div>
 <div id="container">
 <table>
@@ -65,26 +65,56 @@ $sql = mysql_query( "UPDATE tbMembers SET first_name='$myFirstName', last_name='
 <td>
 <table width="380" align="center">
 <CAPTION><h3>MY PROFILE</h3></CAPTION>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
 <tr>
     <td>Student Id:</td>
     <td><?php echo $stdId; ?></td>
 </tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
 <tr>
     <td>First Name:</td>
     <td><?php echo $firstName; ?></td>
 </tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
 <tr>
     <td>Last Name:</td>
     <td><?php echo $lastName; ?></td>
 </tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
 <tr>
     <td>Email:</td>
     <td><?php echo $email; ?></td>
 </tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
 <tr>
     <td>Password:</td>
     <td>Encrypted</td>
 </tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
 </table>
 </td>
 <td>
@@ -92,11 +122,11 @@ $sql = mysql_query( "UPDATE tbMembers SET first_name='$myFirstName', last_name='
 <CAPTION><h3>UPDATE PROFILE</h3></CAPTION>
 <form action="manage-profile.php?id=<?php echo $_SESSION['member_id']; ?>" method="post" onsubmit="return updateProfile(this)">
 <table align="center">
-<tr><td>First Name:</td><td><input type="text" style="background-color:#999999; font-weight:bold;" name="firstname" maxlength="15" value=""></td></tr>
-<tr><td>Last Name:</td><td><input type="text" style="background-color:#999999; font-weight:bold;" name="lastname" maxlength="15" value=""></td></tr>
-<tr><td>Email Address:</td><td><input type="text" style="background-color:#999999; font-weight:bold;" name="email" maxlength="100" value=""></td></tr>
-<tr><td>New Password:</td><td><input type="password" style="background-color:#999999; font-weight:bold;" name="password" maxlength="5" value=""></td></tr>
-<tr><td>Confirm New Password:</td><td><input type="password" style="background-color:#999999; font-weight:bold;" name="ConfirmPassword" maxlength="15" value=""></td></tr>
+<tr><td>First Name:</td><td><input type="text" style="background-color:white; font-weight:bold;" name="firstname" maxlength="15" value=""></td></tr>
+<tr><td>Last Name:</td><td><input type="text" style="background-color:white; font-weight:bold;" name="lastname" maxlength="15" value=""></td></tr>
+<tr><td>Email Address:</td><td><input type="text" style="background-color:white; font-weight:bold;" name="email" maxlength="100" value=""></td></tr>
+<tr><td>New Password:</td><td><input type="password" style="background-color:white; font-weight:bold;" name="password" maxlength="5" value=""></td></tr>
+<tr><td>Confirm New Password:</td><td><input type="password" style="background-color:white; font-weight:bold;" name="ConfirmPassword" maxlength="15" value=""></td></tr>
 <tr><td>&nbsp;</td></td><td><input type="submit" name="update" value="Update Profile"></td></tr>
 </table>
 </form>
