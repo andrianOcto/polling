@@ -3,13 +3,13 @@ body {
 	color: #666666;
 	margin: 0px;
 	padding: 20px 10px 0px;
-	background:#bd6f2f url(images/base-bg.gif) repeat-x top;
+	background:white url(images/base-bg.gif) repeat-x top;
 }
 .textfield {
 	font-size: 11px;
 	color: #333333;
-	background: #F7F7F7;
-	border: 1px solid #CCCCCC;
+	background: blue;
+	border: 1px  #CCCCCC;
 	padding-left: 1px;
 }
 .bottom_addr {
@@ -38,10 +38,36 @@ a:hover {
 	color: #99CC00;
 }
 .err {
-	color: #FF9900;
+	font-size : 20px;
+	color: red;
 }
 .news {
     color:red;
+}
+.judul
+{
+	font-size : 48px;
+	color : black;
+}
+.textlogout
+{
+	font-size : 20px;
+	color	: black ;
+}
+.textbiru
+{
+	font-size : 35px;
+	color : darkblue;
+}
+.textbiru2
+{
+	font-size : 25px;
+	color : darkblue;
+}
+.textmerah
+{
+	font-size : 35px;
+	color : red;
 }
 th {
 	font-weight: bold;
@@ -52,26 +78,29 @@ width:1000px;
 margin:0 auto; 
 margin-top:50px;
 padding-top:0px;
-background: beige;
+background: white;
 height:auto;
 }
 #header{
 text-align:center;
-background:#f9dec7;
+background:#FFFFCC;
+border : black ;
 }
 #container{
-border:#bd6f2f solid 1px;
+border:#bd6f2f  1px;
 padding:4px 6px 2px 6px;
 width:970px; 
 margin:0 auto; 
-background:#fff6f3;  
+background:#F0FFFF;  
 font-size:12px; 
 text-align:justify;
 margin-top:20px;
+border : black inset;
 }
 #footer{
 width:1000px; 
 margin:0 auto; 
 margin-top:20px;
-background:#f9dec7;
+background:#FFFFCC;
+border : black ;
 }

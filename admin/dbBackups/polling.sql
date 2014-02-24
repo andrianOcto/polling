@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.2.2
+-- version 4.0.4.1
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 24, 2014 at 12:28 PM
--- Server version: 5.5.27
--- PHP Version: 5.4.7
+-- Generation Time: Feb 24, 2014 at 11:43 AM
+-- Server version: 5.6.11
+-- PHP Version: 5.5.3
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `polling`
 --
+CREATE DATABASE IF NOT EXISTS `polling` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `polling`;
 
 -- --------------------------------------------------------
 
@@ -105,33 +107,12 @@ INSERT INTO `tbmembers` (`member_id`, `first_name`, `last_name`, `email`, `passw
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbpolling`
---
-
-CREATE TABLE IF NOT EXISTS `tbpolling` (
-  `poll_id` int(11) NOT NULL AUTO_INCREMENT,
-  `poll_name` varchar(50) NOT NULL,
-  `poll_year` int(11) NOT NULL,
-  PRIMARY KEY (`poll_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
-
---
--- Dumping data for table `tbpolling`
---
-
-INSERT INTO `tbpolling` (`poll_id`, `poll_name`, `poll_year`) VALUES
-(1, 'Polling HMIF', 2014);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `tbpositions`
 --
 
 CREATE TABLE IF NOT EXISTS `tbpositions` (
   `position_id` int(5) NOT NULL AUTO_INCREMENT,
   `position_name` varchar(45) NOT NULL,
-  `f_polling_id` int(11) NOT NULL DEFAULT '1',
   PRIMARY KEY (`position_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
@@ -139,14 +120,14 @@ CREATE TABLE IF NOT EXISTS `tbpositions` (
 -- Dumping data for table `tbpositions`
 --
 
-INSERT INTO `tbpositions` (`position_id`, `position_name`, `f_polling_id`) VALUES
-(1, 'Chairperson', 1),
-(2, 'Secretary', 1),
-(5, 'Vice-Secretary', 1),
-(7, 'Organizing-Secretary', 1),
-(8, 'Treasurer', 1),
-(9, 'Vice-Treasurer', 1),
-(10, 'Vice-Chairperson', 1);
+INSERT INTO `tbpositions` (`position_id`, `position_name`) VALUES
+(1, 'Chairperson'),
+(2, 'Secretary'),
+(5, 'Vice-Secretary'),
+(7, 'Organizing-Secretary'),
+(8, 'Treasurer'),
+(9, 'Vice-Treasurer'),
+(10, 'Vice-Chairperson');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

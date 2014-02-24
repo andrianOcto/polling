@@ -2,7 +2,6 @@
 mysql_connect('localhost', 'root', '') or die(mysql_error());
 mysql_select_db('polling') or die(mysql_error());
 
-
 session_start();
 //If your session isn't valid, it returns you to the login screen for protection
 if(empty($_SESSION['admin_id'])){
@@ -10,7 +9,6 @@ if(empty($_SESSION['admin_id'])){
 }
 ?>
 <html><head>
-        <script src="js/admin.js"></script>
 <link href="css/admin_styles.css" rel="stylesheet" type="text/css" />
 </head><body bgcolor="tan">
 <center><a href ="https://sourceforge.net/projects/pollingsystem/"><img src = "images/logo" alt="site logo"></a></center><br>     
@@ -23,6 +21,7 @@ if(empty($_SESSION['admin_id'])){
 <p align="center">&nbsp;</p>
 <div id="container">
 
+<<<<<<< HEAD
 <p>Pick a poll to be modified</p>
 <SELECT NAME="poll" id="poll">
     <?php
@@ -52,6 +51,9 @@ if(empty($_SESSION['admin_id'])){
 </form>
 
 
+=======
+<p>Click a link above to perform an administrative operation.</p>
+>>>>>>> 6d71df42e4ace3a8d6f19373c66d1e918da9b8b2
 
 
 </div>
