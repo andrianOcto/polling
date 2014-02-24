@@ -39,7 +39,7 @@ while($row1 = mysql_fetch_array($resulta))
 ?> 
 <?php
 // retrieving positions sql query
-$positions=mysql_query("SELECT * FROM tbPositions")
+$positions=mysql_query("SELECT * FROM tbPositions WHERE f_polling_id = $_COOKIE[poll_id]")
 or die("There are no records to display ... \n" . mysql_error()); 
 ?>
 <?php
