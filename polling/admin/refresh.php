@@ -101,7 +101,14 @@ height='20'>
 width='<?php if(isset($_POST['Submit'])){ if ($candidate_2 || $candidate_1 != 0){echo(100*round($candidate_2/($candidate_2+$candidate_1),2));}} ?>'
 height='20'>
 <?php if(isset($_POST['Submit'])){ if ($candidate_2 || $candidate_1 != 0){echo(100*round($candidate_2/($candidate_2+$candidate_1),2));}} ?>% of <?php if(isset($_POST['Submit'])){echo $totalvotes;} ?> total votes
-<br>votes <?php if(isset($_POST['Submit'])){ echo $candidate_2;} ?>
+<br>votes <?php if(isset($_POST['Submit'])){ echo $candidate_2;} 
+
+if(isset($_POST['Submit']))
+{
+	echo "<br/><a href='ex.php?position=".$_POST['position']."' target='_blank'><input type='button' value='Cetak Polling'></a>";
+}
+?>
+
 </div>
 <div id="footer">
 <div class="bottom_addr">&copy; 2012 Simple PHP Polling System. All Rights Reserved</div>
