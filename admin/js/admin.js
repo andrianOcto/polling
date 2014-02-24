@@ -5,6 +5,10 @@ function createCookie(){
     alert("Polling Dipilih");
 }
 
+function addPoll(){
+    var name = document.getElementById("poll_name");
+    alert("NAMA = " + name.value + "TAHUN = " + year.value);
+}
 
 function loginValidate(loginForm){
 

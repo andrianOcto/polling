@@ -16,18 +16,13 @@ $g=100;
 $b=100;
 $i=0;
 $mysql=mysql_query("select candidate_name,candidate_cvotes from tbcandidates where candidate_position='".$_GET['position']."'");
-
+$counter=0;
 while($baris=mysql_fetch_array($mysql))
 {
 	$data[''.$baris[0]]=$baris[1];
-	if($data[''.$baris[0]]==0)
+	if($data[''.$baris[0]]!=0)
 	{
-	?>		
-		<script type="text/javascript" >
-			window.alert("Maaf Data Belum lengkap");
-			window.location="../siswa/index.php";
-		</script>
-	<?php		
+		$counter++;
 	}
 	$col[$i]=array($r,$g,$b);
 	if($r>=255)
@@ -49,6 +44,26 @@ while($baris=mysql_fetch_array($mysql))
 	$b+=50;
 }
 
+
+if($counter==0)
+{
+	?>		
+		<script type="text/javascript" >
+			window.alert("Maaf Data Belum lengkap");
+			window.location="refresh.php";
+		</script>
+	<?php		
+	
+}
+
+$jenis="";
+$tahun=0;
+$mysql=mysql_query("select * from tbpolling where poll_id='".$_COOKIE['poll_id']."'");
+while($baris=mysql_fetch_array($mysql))
+{
+	$jenis=$jenis."".$baris[1];
+	$tahun=$baris[2];
+}
 //Bar diagram
 $pdf->SetFont('Arial','B',20);
 $pdf->Cell(0,0,"Laporan Hasil Polling",0,0,'C');
@@ -63,7 +78,7 @@ $pdf->SetFont('Arial','B',12);
 
 $pdf->Ln(6);
 $pdf->SetFont('Arial', 'BIU', 12);
-$pdf->Cell(0, 5, 'Diagram Perolehan Vote', 0, 1);
+$pdf->Cell(0, 5, $jenis." ".$tahun, 0, 1);
 $pdf->Ln(8);
 $valX = $pdf->GetX();
 $valY = $pdf->GetY();

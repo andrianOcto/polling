@@ -9,7 +9,7 @@ if(empty($_SESSION['admin_id'])){
  header("location:access-denied.php");
 } 
 //retrive candidates from the tbcandidates table
-$result=mysql_query("SELECT * FROM tbCandidates")
+$result=mysql_query("SELECT * FROM tbCandidates,tbpositions WHERE tbcandidates.candidate_position = tbpositions.position_name AND tbpositions.f_polling_id = $_COOKIE[poll_id]")
 or die("There are no records to display ... \n" . mysql_error()); 
 if (mysql_num_rows($result)<1){
     $result = null;
@@ -17,7 +17,7 @@ if (mysql_num_rows($result)<1){
 ?>
 <?php
 // retrieving positions sql query
-$positions_retrieved=mysql_query("SELECT * FROM tbPositions")
+$positions_retrieved=mysql_query("SELECT * FROM tbPositions WHERE f_polling_id = $_COOKIE[poll_id]")
 or die("There are no records to display ... \n" . mysql_error()); 
 /*
 $row = mysql_fetch_array($positions_retrieved);

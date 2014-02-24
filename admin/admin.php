@@ -29,7 +29,7 @@ if(empty($_SESSION['admin_id'])){
         $pollings=mysql_query("SELECT * FROM tbpolling")
         or die("There are no records to display ... \n" . mysql_error());
         while ($row=mysql_fetch_array($pollings)){
-            echo "<OPTION VALUE=$row[poll_name]>$row[poll_name]";
+            echo "<OPTION VALUE=$row[poll_name]>$row[poll_name].($row[poll_year])";
         }
     ?>
 </SELECT>
@@ -37,6 +37,19 @@ if(empty($_SESSION['admin_id'])){
 <button type="button" onclick="createCookie()" >
     Choose Poll
 </button>
+
+<p>Add Poll</p>
+
+<form id="form_add"" action="proses_add_poll.php">
+    Poll Name: <input type="text" name="name" required="true">
+    <input type="submit" name="Submit" value="Add" />
+</form>
+
+
+
+<form>
+    
+</form>
 
 
 
