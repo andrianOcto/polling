@@ -33,14 +33,29 @@ $row = mysql_fetch_array($positions_retrieved);
 if (isset($_POST['Submit']))
 {
 
+//This is the directory where images will be saved 
+$target = "photos/"; 
+$target = $target . basename( $_FILES['photo']['name']);
+//Writes the photo to the server 
+move_uploaded_file($_FILES['photo']['tmp_name'], $target);
+
 $newCandidateName = addslashes( $_POST['name'] ); //prevents types of SQL injection
 $newCandidatePosition = addslashes( $_POST['position'] ); //prevents types of SQL injection
+$newCandidateDate = addslashes( $_POST['date'] );
+$newCandidateGender = addslashes( $_POST['gender'] );
+$newCandidateVision = addslashes( $_POST['vision'] );
+$newCandidateMission = addslashes( $_POST['mission'] );
+$newCandidateAchievements = addslashes( $_POST['achievements'] );
+$newCandidatePhoto=($_FILES['photo']['name']);
 
-$sql = mysql_query( "INSERT INTO tbCandidates(candidate_name,candidate_position) VALUES ('$newCandidateName','$newCandidatePosition')" )
+
+$sql = mysql_query( "INSERT INTO tbCandidates(candidate_name,candidate_position,candidate_date_of_birth,candidate_gender,candidate_vision,candidate_mission,candidate_achievements,candidate_photo) VALUES ('$newCandidateName','$newCandidatePosition','$newCandidateDate','$newCandidateGender','$newCandidateVision','$newCandidateMission','$newCandidateAchievements','$newCandidatePhoto')" )
         or die("Could not insert candidate at the moment". mysql_error() );
 
+
+
 // redirect back to candidates
- header("Location: candidates.php");
+header("Location: candidates.php");
 }
 ?>
 <?php
@@ -81,13 +96,13 @@ $sql = mysql_query( "INSERT INTO tbCandidates(candidate_name,candidate_position)
 <div id="container">
 <table width="380" align="center">
 <CAPTION><h3 class="texthijau">ADD NEW CANDIDATE</h3></CAPTION>
-<form name="fmCandidates" id="fmCandidates" action="candidates.php" method="post" onsubmit="return candidateValidate(this)">
+<form name="fmCandidates" id="fmCandidates" action="candidates.php" method="post" onsubmit="return candidateValidate(this)" enctype="multipart/form-data">
 <tr>
-    <td><b>Candidate Name</b></td>
+    <td>Name</td>
     <td><input type="text" name="name" /></td>
 </tr>
 <tr>
-    <td><b>Candidate Position</b></td>
+    <td>Position</td>
     <!--<td><input type="combobox" name="position" value="<?php echo $positions; ?>"/></td>-->
     <td><SELECT NAME="position" id="position">select
     <OPTION VALUE="select">select
@@ -101,6 +116,32 @@ $sql = mysql_query( "INSERT INTO tbCandidates(candidate_name,candidate_position)
     ?>
     </SELECT>
     </td>
+</tr>
+<tr>
+    <td>Date of Birth</td>
+    <td><input type="date" name="date" /></td>
+</tr>
+<tr>
+    <td>Gender</td>
+    <td><SELECT NAME="gender" id="gender">select
+	<OPTION VALUE="Male">Male
+	<OPTION VALUE="Female">Female
+</tr>
+<tr>
+    <td>Vision</td>
+    <td><textarea rows="3" cols="20" name="vision" form="fmCandidates"></textarea></td>
+</tr>
+<tr>
+    <td>Mission</td>
+    <td><textarea rows="3" cols="20" name="mission" form="fmCandidates"></textarea></td>
+</tr>
+<tr>
+    <td>Achievements</td>
+    <td><textarea rows="5" cols="35" name="achievements" form="fmCandidates"></textarea></td>
+</tr>
+<tr>
+    <td>Photo</td>
+    <td><input type="file" name="photo"></td>
 </tr>
 <tr>
     <td>&nbsp;</td>

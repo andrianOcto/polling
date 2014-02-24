@@ -73,7 +73,7 @@ $sql = mysql_query( "UPDATE tbMembers SET first_name='$myFirstName', last_name='
 			mysql_select_db('polling') or die(mysql_error());
 			$data = mysql_query("SELECT * FROM tbCandidates WHERE candidate_name='$candidate_name'") or die(mysql_error());
 			$info = mysql_fetch_array( $data );
-			Echo "<img src=http://localhost/polling/admin/photos/".$info['candidate_photo'] ."> <br>"; 
+			Echo "<img src=admin/photos/".$info['candidate_photo'] ."> <br>"; 
 			Echo "<b>Name :</b> ".$info['candidate_name'] . "<br> "; 
 			Echo "<b>Position :</b> ".$info['candidate_position'] . " <br>"; 
 			Echo "<b>Date of Birth :</b> ".$info['candidate_date_of_birth'] . " <br>";

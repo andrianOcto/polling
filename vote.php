@@ -136,7 +136,7 @@ $(document).ready(function(){
   if (isset($_POST['Submit'])){
 while ($row=mysql_fetch_array($result)){
 echo "<tr>";
-echo "<td>" . $row['candidate_name']."</td>";
+echo "<td><a href='candidate-profile.php?name=".$row['candidate_name']."'>" . $row['candidate_name']." </a></td>";
 echo "<td><input type='radio' name='vote' value='$row[candidate_name]' onclick='getVote(this.value)'/></td>";
 echo "</tr>";
 }

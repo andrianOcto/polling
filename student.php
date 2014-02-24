@@ -16,7 +16,7 @@ if(empty($_SESSION['member_id'])){
 <div id="page">
 <div id="header">
 <h1 class="textbiru"><marquee> STUDENT HOME </marquee></h1>
-<a href="student.php">Home</a> | <a href="vote.php">Current Polling</a> | <a href="manage-profile.php">Manage My Profile</a> | <a href="logout.php">Logout</a>
+<a href="student.php">Home</a> | <a href="checkvote.php">Current Polling</a> | <a href="manage-profile.php">Manage My Profile</a> | <a href="logout.php">Logout</a>
 </div>
 <div id="container">
 <p class="textbiru2"> Click the link above to do the stuff.</p>
