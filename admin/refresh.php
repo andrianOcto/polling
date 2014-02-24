@@ -53,22 +53,22 @@ if(empty($_SESSION['admin_id'])){
 <?php if(isset($_POST['Submit'])){$totalvotes=$candidate_1+$candidate_2;} ?>
 
 <html><head>
-<link href="css/admin_styles.css" rel="stylesheet" type="text/css" />
+<link href="css/user_styles.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript" src="js/admin.js">
 </script>
 </head><body bgcolor="tan">
-<center><a href ="https://sourceforge.net/projects/pollingsystem/"><img src = "images/logo" alt="site logo"></a></center><br>     
-<center><b><font color = "brown" size="6">Simple PHP Polling System</font></b></center><br><br>
+<center><img src = "images/polling.png" alt="site logo" height="100" width="100">  <img src = "images/admin.png" alt="site logo" height="100" width="100"> </center><br>     
+<center><b><p class="judul"> Simple PHP Polling System </p></b></center>
 <div id="page">
 <div id="header">
-<h1>POLL RESULTS </h1>
+<h1 class="textbiru">POLL RESULTS </h1>
 <a href="admin.php">Home</a> | <a href="manage-admins.php">Manage Administrators</a> | <a href="positions.php">Manage Positions</a> | <a href="candidates.php">Manage Candidates</a> | <a href="refresh.php">Poll Results</a> | <a href="logout.php">Logout</a>
 </div>
 <div id="container">
 <table width="420" align="center">
 <form name="fmNames" id="fmNames" method="post" action="refresh.php" onsubmit="return positionValidate(this)">
 <tr>
-    <td>Choose Position</td>
+    <td><b>Choose Position</b></td>
     <td><SELECT NAME="position" id="position">
     <OPTION VALUE="select">select
     <?php 

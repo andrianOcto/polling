@@ -1,13 +1,13 @@
 <html><head>
-<link href="css/admin_styles.css" rel="stylesheet" type="text/css" />
+<link href="css/user_styles.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript" src="js/admin.js">
 </script>
 </head><body bgcolor="tan">
-<center><a href ="https://sourceforge.net/projects/pollingsystem/"><img src = "images/logo" alt="site logo"></a></center><br>     
-<center><b><font color = "brown" size="6">Simple PHP Polling System</font></b></center><br><br>
+<center><img src = "images/polling.png" alt="site logo" height="100" width="100">  <img src = "images/admin.png" alt="site logo" height="100" width="100"> </center><br>     
+<center><b><p class="judul"> Simple PHP Polling System </p></b></center>
 <div id="page">
 <div id="header">
-<h1>MANAGE ADMINISTRATORS </h1>
+<h1 class="textbiru">MANAGE ADMINISTRATORS </h1>
 <a href="admin.php">Home</a> | <a href="manage-admins.php">Manage Administrators</a> | <a href="positions.php">Manage Positions</a> | <a href="candidates.php">Manage Candidates</a> | <a href="refresh.php">Poll Results</a> | <a href="logout.php">Logout</a>
 </div>
 <div id="container">
@@ -59,11 +59,11 @@ die( "An administrator account has been updated." );
 <form action="manage-admins.php?id=<?php echo $_SESSION['admin_id']; ?>" method="post" onsubmit="return updateProfile(this)">
 <table align="center">
 <CAPTION><h4>UPDATE ACCOUNT</h4></CAPTION>
-<tr><td>First Name:</td><td><input type="text" style="background-color:#999999; font-weight:bold;" name="firstname" maxlength="15" value=""></td></tr>
-<tr><td>Last Name:</td><td><input type="text" style="background-color:#999999; font-weight:bold;" name="lastname" maxlength="15" value=""></td></tr>
-<tr><td>Email Address:</td><td><input type="text" style="background-color:#999999; font-weight:bold;" name="email" maxlength="100" value=""></td></tr>
-<tr><td>New Password:</td><td><input type="password" style="background-color:#999999; font-weight:bold;" name="password" maxlength="15" value=""></td></tr>
-<tr><td>Confirm New Password:</td><td><input type="password" style="background-color:#999999; font-weight:bold;" name="ConfirmPassword" maxlength="15" value=""></td></tr>
+<tr><td>First Name:</td><td><input type="text" style="background-color:white; font-weight:bold;" name="firstname" maxlength="15" value=""></td></tr>
+<tr><td>Last Name:</td><td><input type="text" style="background-color:white; font-weight:bold;" name="lastname" maxlength="15" value=""></td></tr>
+<tr><td>Email Address:</td><td><input type="text" style="background-color:white; font-weight:bold;" name="email" maxlength="100" value=""></td></tr>
+<tr><td>New Password:</td><td><input type="password" style="background-color:white; font-weight:bold;" name="password" maxlength="15" value=""></td></tr>
+<tr><td>Confirm New Password:</td><td><input type="password" style="background-color:white; font-weight:bold;" name="ConfirmPassword" maxlength="15" value=""></td></tr>
 <tr><td>&nbsp;</td><td><input type="submit" name="update" value="Update Account"></td></tr>
 </table>
 </form>
@@ -72,11 +72,11 @@ die( "An administrator account has been updated." );
 <form action="manage-admins.php" method="post" onsubmit="return registerValidate(this)">
 <table align="center">
 <CAPTION><h4>CREATE ACCOUNT</h4></CAPTION>
-<tr><td>First Name:</td><td><input type="text" style="background-color:#999999; font-weight:bold;" name="firstname" maxlength="15" value=""></td></tr>
-<tr><td>Last Name:</td><td><input type="text" style="background-color:#999999; font-weight:bold;" name="lastname" maxlength="15" value=""></td></tr>
-<tr><td>Email Address:</td><td><input type="text" style="background-color:#999999; font-weight:bold;" name="email" maxlength="100" value=""></td></tr>
-<tr><td>Password:</td><td><input type="password" style="background-color:#999999; font-weight:bold;" name="password" maxlength="15" value=""></td></tr>
-<tr><td>Confirm Password:</td><td><input type="password" style="background-color:#999999; font-weight:bold;" name="ConfirmPassword" maxlength="15" value=""></td></tr>
+<tr><td>First Name:</td><td><input type="text" style="background-color:white; font-weight:bold;" name="firstname" maxlength="15" value=""></td></tr>
+<tr><td>Last Name:</td><td><input type="text" style="background-color:white; font-weight:bold;" name="lastname" maxlength="15" value=""></td></tr>
+<tr><td>Email Address:</td><td><input type="text" style="background-color:white; font-weight:bold;" name="email" maxlength="100" value=""></td></tr>
+<tr><td>Password:</td><td><input type="password" style="background-color:white; font-weight:bold;" name="password" maxlength="15" value=""></td></tr>
+<tr><td>Confirm Password:</td><td><input type="password" style="background-color:white; font-weight:bold;" name="ConfirmPassword" maxlength="15" value=""></td></tr>
 <tr><td>&nbsp;</td><td><input type="submit" name="submit" value="Create Account"></td></tr>
 </table>
 </form>

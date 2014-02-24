@@ -66,28 +66,28 @@ $sql = mysql_query( "INSERT INTO tbCandidates(candidate_name,candidate_position)
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>Administration Control Panel:Candidates</title>
-<link href="css/admin_styles.css" rel="stylesheet" type="text/css" />
+<link href="css/user_styles.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript" src="js/admin.js">
 </script>
 </head>
 <body bgcolor="tan">
-<center><a href ="https://sourceforge.net/projects/pollingsystem/"><img src = "images/logo" alt="site logo"></a></center><br>     
-<center><b><font color = "brown" size="6">Simple PHP Polling System</font></b></center><br><br>
+<center><img src = "images/polling.png" alt="site logo" height="100" width="100">  <img src = "images/admin.png" alt="site logo" height="100" width="100"> </center><br>     
+<center><b><p class="judul"> Simple PHP Polling System </p></b></center>
 <div id="page">
 <div id="header">
-  <h1>MANAGE CANDIDATES</h1>
+  <h1 class="textbiru">MANAGE CANDIDATES</h1>
   <a href="admin.php">Home</a> | <a href="manage-admins.php">Manage Administrators</a> | <a href="positions.php">Manage Positions</a> | <a href="candidates.php">Manage Candidates</a> | <a href="refresh.php">Poll Results</a> | <a href="logout.php">Logout</a>
 </div>
 <div id="container">
 <table width="380" align="center">
-<CAPTION><h3>ADD NEW CANDIDATE</h3></CAPTION>
+<CAPTION><h3 class="texthijau">ADD NEW CANDIDATE</h3></CAPTION>
 <form name="fmCandidates" id="fmCandidates" action="candidates.php" method="post" onsubmit="return candidateValidate(this)">
 <tr>
-    <td>Candidate Name</td>
+    <td><b>Candidate Name</b></td>
     <td><input type="text" name="name" /></td>
 </tr>
 <tr>
-    <td>Candidate Position</td>
+    <td><b>Candidate Position</b></td>
     <!--<td><input type="combobox" name="position" value="<?php echo $positions; ?>"/></td>-->
     <td><SELECT NAME="position" id="position">select
     <OPTION VALUE="select">select
@@ -109,7 +109,7 @@ $sql = mysql_query( "INSERT INTO tbCandidates(candidate_name,candidate_position)
 </table>
 <hr>
 <table border="0" width="620" align="center">
-<CAPTION><h3>AVAILABLE CANDIDATES</h3></CAPTION>
+<CAPTION><h3 class="texthijau">AVAILABLE CANDIDATES</h3></CAPTION>
 <tr>
 <th>Candidate ID</th>
 <th>Candidate Name</th>

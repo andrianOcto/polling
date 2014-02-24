@@ -11,19 +11,19 @@ if(empty($_SESSION['admin_id'])){
 ?>
 <html><head>
         <script src="js/admin.js"></script>
-<link href="css/admin_styles.css" rel="stylesheet" type="text/css" />
+<link href="css/user_styles.css" rel="stylesheet" type="text/css" />
 </head><body bgcolor="tan">
-<center><a href ="https://sourceforge.net/projects/pollingsystem/"><img src = "images/logo" alt="site logo"></a></center><br>     
-<center><b><font color = "brown" size="6">Simple PHP Polling System</font></b></center><br><br>
+<center><img src = "images/polling.png" alt="site logo" height="100" width="100">  <img src = "images/admin.png" alt="site logo" height="100" width="100"> </center><br>     
+<center><b><p class="judul"> Simple PHP Polling System </p></b></center>
 <div id="page">
 <div id="header">
-<h1>ADMINISTRATION CONTROL PANEL </h1>
+<h1 class="textbiru">ADMINISTRATION CONTROL PANEL </h1>
 <a href="admin.php">Home</a> | <a href="manage-admins.php">Manage Administrators</a> | <a href="positions.php">Manage Positions</a> | <a href="candidates.php">Manage Candidates</a> | <a href="refresh.php">Poll Results</a> | <a href="logout.php">Logout</a>
 </div>
 <p align="center">&nbsp;</p>
 <div id="container">
 
-<p>Pick a poll to be modified</p>
+<p><b>First, please pick a poll to be modified<b></p>
 <SELECT NAME="poll" id="poll">
     <?php
         $pollings=mysql_query("SELECT * FROM tbpolling")

@@ -3,19 +3,19 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>Simple PHP Polling System Access Denied</title>
-<link href="css/admin_styles.css" rel="stylesheet" type="text/css" />
+<link href="css/user_styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body bgcolor="tan">
-<center><a href ="https://sourceforge.net/projects/pollingsystem/"><img src = "images/logo" alt="site logo"></a></center><br>     
-<center><b><font color = "brown" size="6">Simple PHP Polling System</font></b></center><br><br>
+<center><img src = "images/polling.png" alt="site logo" height="100" width="100">  <img src = "images/admin.png" alt="site logo" height="100" width="100"> </center><br>     
+<center><b><p class="judul"> Simple PHP Polling System </p></b></center>
 <body>
 <div id="page">
 <div id="header">
-  <h1>Access Denied</h1>
+  <h1 class="textmerah">ACCESS DENIED</h1>
   <a href="admin.php">Home</a> | <a href="manage-admins.php">Manage Administrators</a> | <a href="positions.php">Manage Positions</a> | <a href="candidates.php">Manage Candidates</a> | <a href="results.php">Poll Results</a>
 </div>
 <div id="container">
-<div class="err">Access Denied!</div>
+<div class="err">ACCESS DENIED !</div>
   <p>You don't have access to this resource. <a href="login.html">Click here</a> to login first.</p>
 </div>
 <div id="footer"> 

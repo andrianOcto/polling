@@ -53,31 +53,31 @@ $sql = mysql_query( "INSERT INTO tbPositions(position_name,f_polling_id) VALUES 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>Administration Control Panel:Positions</title>
-<link href="css/admin_styles.css" rel="stylesheet" type="text/css" />
+<link href="css/user_styles.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript" src="js/admin.js">
 </script>
 </head>
 <body bgcolor="tan">
-<center><a href ="https://sourceforge.net/projects/pollingsystem/"><img src = "images/logo" alt="site logo"></a></center><br>     
-<center><b><font color = "brown" size="6">Simple PHP Polling System</font></b></center><br><br>
+<center><img src = "images/polling.png" alt="site logo" height="100" width="100">  <img src = "images/admin.png" alt="site logo" height="100" width="100"> </center><br>     
+<center><b><p class="judul"> Simple PHP Polling System </p></b></center>
 <div id="page">
 <div id="header">
-  <h1>MANAGE POSITIONS</h1>
+  <h1 class="textbiru">MANAGE POSITIONS</h1>
   <a href="admin.php">Home</a> | <a href="manage-admins.php">Manage Administrators</a> | <a href="positions.php">Manage Positions</a> | <a href="candidates.php">Manage Candidates</a> | <a href="refresh.php">Poll Results</a> | <a href="logout.php">Logout</a>
 </div>
 <div id="container">
 <table width="380" align="center">
-<CAPTION><h3>ADD NEW POSITION</h3></CAPTION>
+<CAPTION><h3 class="texthijau">ADD NEW POSITION</h3></CAPTION>
 <form name="fmPositions" id="fmPositions" action="positions.php" method="post" onsubmit="return positionValidate(this)">
 <tr>
-    <td>Position Name</td>
+    <td><b>Position Name</b></td>
     <td><input type="text" name="position" /></td>
     <td><input type="submit" name="Submit" value="Add" /></td>
 </tr>
 </table>
 <hr>
 <table border="0" width="420" align="center">
-<CAPTION><h3>AVAILABLE POSITIONS</h3></CAPTION>
+<CAPTION><h3 class="texthijau">AVAILABLE POSITIONS</h3></CAPTION>
 <tr>
 <th>Position ID</th>
 <th>Position Name</th>

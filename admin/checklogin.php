@@ -3,15 +3,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>Simple PHP Polling System Access Denied</title>
-<link href="css/admin_styles.css" rel="stylesheet" type="text/css" />
+<link href="css/user_styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body bgcolor="tan">
-<center><a href ="https://sourceforge.net/projects/pollingsystem/"><img src = "images/logo" alt="site logo"></a></center><br>     
-<center><b><font color = "brown" size="6">Simple PHP Polling System</font></b></center><br><br>
+<center><img src = "images/polling.png" alt="site logo" height="100" width="100">  <img src = "images/admin.png" alt="site logo" height="100" width="100"> </center><br>     
+<center><b><p class="judul"> Simple PHP Polling System </p></b></center>
 <body>
 <div id="page">
 <div id="header">
-<h1>Invalid Credentials Provided </h1>
+<h1 class="textmerah">Invalid Credentials Provided </h1>
 <p align="center">&nbsp;</p>
 </div>
 <div id="container">
@@ -56,7 +56,7 @@ header("location:admin.php");
 }
 //If the username or password is wrong, you will receive this message below.
 else {
-echo "Wrong Username or Password<br><br>Return to <a href=\"login.html\">login</a>";
+echo "Wrong Username or Password<br><br>Return to <a href=\"login.html\">admin login page </a>";
 }
 
 ob_end_flush();
