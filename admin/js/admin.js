@@ -1,5 +1,4 @@
 //function to handle login-form validation
-<<<<<<< HEAD
 function createCookie(){
     var x = document.getElementById("poll");
     document.cookie="poll_id=" + (x.selectedIndex + 1);
@@ -11,8 +10,6 @@ function addPoll(){
     alert("NAMA = " + name.value + "TAHUN = " + year.value);
 }
 
-=======
->>>>>>> 6d71df42e4ace3a8d6f19373c66d1e918da9b8b2
 function loginValidate(loginForm){
 
 var validationVerified=true;

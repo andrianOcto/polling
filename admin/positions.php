@@ -9,7 +9,7 @@ if(empty($_SESSION['admin_id'])){
  header("location:access-denied.php");
 }
 //retrive positions from the tbpositions table
-$result=mysql_query("SELECT * FROM tbPositions")
+$result=mysql_query("SELECT * FROM tbPositions where f_polling_id = $_COOKIE[poll_id]")
 or die("There are no records to display ... \n" . mysql_error()); 
 if (mysql_num_rows($result)<1){
     $result = null;
@@ -22,7 +22,7 @@ if (isset($_POST['Submit']))
 
 $newPosition = addslashes( $_POST['position'] ); //prevents types of SQL injection
 
-$sql = mysql_query( "INSERT INTO tbPositions(position_name) VALUES ('$newPosition')" )
+$sql = mysql_query( "INSERT INTO tbPositions(position_name,f_polling_id) VALUES ('$newPosition',$_COOKIE[poll_id])" )
         or die("Could not insert position at the moment". mysql_error() );
 
 // redirect back to positions
@@ -81,14 +81,20 @@ $sql = mysql_query( "INSERT INTO tbPositions(position_name) VALUES ('$newPositio
 <tr>
 <th>Position ID</th>
 <th>Position Name</th>
+<th>Tahun</th>
 </tr>
 
 <?php
 //loop through all table rows
+
+$tahun = mysql_query("SELECT * FROM tbpolling WHERE poll_id = $_COOKIE[poll_id]");
+$trow = mysql_fetch_array($tahun);
+
 while ($row=mysql_fetch_array($result)){
 echo "<tr>";
 echo "<td>" . $row['position_id']."</td>";
 echo "<td>" . $row['position_name']."</td>";
+echo "<td>" . "$trow[poll_year]";
 echo '<td><a href="positions.php?id=' . $row['position_id'] . '">Delete Position</a></td>';
 echo "</tr>";
 }
